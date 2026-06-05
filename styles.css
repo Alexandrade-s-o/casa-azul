@@ -184,86 +184,95 @@ h1, h2, h3, .brand-mark, .kicker, .tag, .post-date, .agenda-when {
   opacity: 0.85;
 }
 
-/* Tarjetas como recortes de papel sobre la mesa */
+/* Todo en trazo de línea: contorno dibujado a mano, sin relleno */
 .card, .post, .frame, .agenda-list li {
-  border: 2px solid var(--graphite);
+  position: relative;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+.card::after, .post::after, .frame::after, .agenda-list li::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2.2px solid var(--graphite);
   border-radius: 18px 8px 20px 10px / 10px 20px 8px 18px;
-  background:
-    linear-gradient(160deg, rgba(255,255,255,0.10), rgba(255,255,255,0) 45%),
-    var(--paper-2);
-  box-shadow: 5px 6px 0 rgba(4, 18, 56, 0.35);
+  filter: url(#pencil);
+  pointer-events: none;
+}
+
+/* Iconos de línea */
+.ic { width: 46px; height: 46px; display: block; }
+.ic g {
+  fill: none;
+  stroke: var(--graphite);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: url(#pencil);
 }
 
 /* CARDS */
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.6rem; }
-.card { padding: 1.7rem 1.6rem; position: relative; transition: transform 0.2s, box-shadow 0.2s; }
+.card { padding: 1.7rem 1.6rem; transition: transform 0.2s; }
 .card:nth-child(even) { transform: rotate(-1deg); }
 .card:nth-child(odd) { transform: rotate(0.8deg); }
-/* cinta de papel (washi tape) */
-.card::before {
-  content: "";
-  position: absolute;
-  top: -10px; left: 50%;
-  width: 64px; height: 20px;
-  transform: translateX(-50%) rotate(-3deg);
-  background: rgba(255, 210, 63, 0.55);
-  border-left: 1px dashed rgba(255,255,255,0.5);
-  border-right: 1px dashed rgba(255,255,255,0.5);
-}
-.card:hover { transform: translateY(-6px) rotate(0deg); box-shadow: 8px 10px 0 rgba(4,18,56,0.4); }
-.card-icon { font-size: 2.1rem; margin-bottom: 0.5rem; }
+.card:hover { transform: translateY(-6px) rotate(0deg); }
+.card-icon { margin-bottom: 0.7rem; }
 .card h3 { font-size: 1.8rem; color: var(--yellow-deep); margin-bottom: 0.2rem; line-height: 1; }
 .card p { color: var(--graphite-soft); font-size: 0.95rem; }
 
 /* BLOG */
 .blog { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.6rem; }
-.post { padding: 1.8rem; display: flex; flex-direction: column; gap: 0.5rem; transition: transform 0.2s, box-shadow 0.2s; }
-.post:hover { transform: translateY(-5px) rotate(0.5deg); box-shadow: 8px 10px 0 rgba(4,18,56,0.4); }
+.post { padding: 1.8rem; display: flex; flex-direction: column; gap: 0.5rem; transition: transform 0.2s; }
+.post:hover { transform: translateY(-5px) rotate(0.5deg); }
 .post-date {
   align-self: flex-start;
-  color: var(--paper);
-  background: var(--yellow-deep);
+  position: relative;
+  color: var(--yellow-deep);
   font-size: 1.25rem;
   line-height: 1;
-  padding: 0.2rem 0.7rem;
-  border-radius: 8px 6px 9px 5px / 5px 9px 6px 8px;
+  padding: 0.25rem 0.7rem;
   transform: rotate(-2deg);
+}
+.post-date::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--yellow-deep);
+  border-radius: 8px 6px 9px 5px / 5px 9px 6px 8px;
+  filter: url(#pencil);
 }
 .post h3 { font-size: 1.7rem; line-height: 1; color: var(--graphite); }
 .post p { color: var(--graphite-soft); font-size: 0.95rem; flex: 1; }
 .post-link { color: var(--blue-deep); text-decoration: none; font-weight: 600; margin-top: 0.5rem; }
 .post-link:hover { color: var(--blue); }
 
-/* GALERÍA tipo polaroid */
+/* GALERÍA en trazo de línea */
 .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1.6rem; }
 .frame {
-  aspect-ratio: 3 / 4;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 10px 10px 0;
-  color: var(--paper);
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  color: var(--graphite-soft);
   font-family: "Caveat", cursive;
   font-size: 1.4rem;
-  background: #f3eee2;
-  border: none;
-  box-shadow: 6px 8px 0 rgba(4, 18, 56, 0.4);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, color 0.2s;
 }
+/* aspa diagonal dibujada, como marco vacío de boceto */
 .frame::before {
   content: "";
   position: absolute;
-  inset: 10px 10px 56px;
+  inset: 10px;
   background:
-    repeating-linear-gradient(45deg, rgba(10,47,122,0.10) 0 9px, transparent 9px 18px),
-    linear-gradient(160deg, #2b62c9, #0a2f7a);
-  border-radius: 2px;
+    linear-gradient(to top right, transparent calc(50% - 1px), var(--line) calc(50% - 1px), var(--line) calc(50% + 1px), transparent calc(50% + 1px)),
+    linear-gradient(to top left, transparent calc(50% - 1px), var(--line) calc(50% - 1px), var(--line) calc(50% + 1px), transparent calc(50% + 1px));
+  filter: url(#pencil);
 }
-.frame span { position: relative; z-index: 1; padding-bottom: 12px; color: #2c2a26; }
-.frame:nth-child(3n) { transform: rotate(-2deg); }
-.frame:nth-child(3n+1) { transform: rotate(1.5deg); }
-.frame { position: relative; }
-.frame:hover { transform: scale(1.04) rotate(0deg); box-shadow: 9px 12px 0 rgba(4,18,56,0.45); }
+.frame span { position: relative; z-index: 1; }
+.frame:nth-child(3n) { transform: rotate(-1.5deg); }
+.frame:nth-child(3n+1) { transform: rotate(1.2deg); }
+.frame:hover { transform: scale(1.03) rotate(0deg); color: var(--graphite); }
 .gallery-note { margin-top: 1.2rem; color: var(--graphite-soft); font-size: 0.85rem; }
 .gallery-note code { color: var(--blue-deep); }
 
