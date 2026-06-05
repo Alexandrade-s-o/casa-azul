@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casa Azul · Residencia Artística</title>
+  <meta name="description" content="Residencia Artística Casa Azul — una experiencia multimedia y multidisciplinar trazada sobre la pizarra del territorio." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Architects+Daughter&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Fondo de pizarra con cuadrícula tipo blueprint -->
+  <div class="blueprint-grid" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header class="nav">
+    <a href="#inicio" class="brand">
+      <span class="brand-mark">CASA</span>
+      <span class="brand-mark brand-mark--accent">AZUL</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#experiencia">Experiencia</a>
+      <a href="#bitacora">Bitácora</a>
+      <a href="#galeria">Galería</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#contacto" class="btn-chalk btn-chalk--sm">Visítanos</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="inicio" class="hero">
+    <div class="hero-sketch" aria-hidden="true">
+      <!-- Casa dibujada a mano, estilo trazo de tiza -->
+      <svg viewBox="0 0 600 360" class="house-svg">
+        <g class="sketch-stroke">
+          <path d="M70 300 L70 170 L300 60 L530 170 L530 300 Z" />
+          <path d="M70 170 L300 60 L530 170" />
+          <rect x="130" y="210" width="70" height="80" />
+          <rect x="265" y="210" width="70" height="80" />
+          <rect x="400" y="210" width="70" height="80" />
+          <line x1="165" y1="210" x2="165" y2="290" />
+          <line x1="130" y1="250" x2="200" y2="250" />
+          <line x1="300" y1="210" x2="300" y2="290" />
+          <line x1="265" y1="250" x2="335" y2="250" />
+          <line x1="435" y1="210" x2="435" y2="290" />
+          <line x1="400" y1="250" x2="470" y2="250" />
+          <path d="M50 300 L560 300" />
+        </g>
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <p class="kicker">Residencia Artística · Territorio vivo</p>
+      <h1 class="hero-title">Una experiencia<br /><span class="hl">multimedia</span> trazada a mano</h1>
+      <p class="hero-sub">
+        Casa Azul es un laboratorio artístico donde la fotografía, el sonido, la
+        memoria y el cuerpo se cruzan. Aquí dibujamos el territorio como quien
+        traza sobre una pizarra: a tiza, sin miedo a borrar.
+      </p>
+      <div class="hero-cta">
+        <a href="#experiencia" class="btn-chalk">Descubre la experiencia</a>
+        <a href="#bitacora" class="btn-link">Leer la bitácora →</a>
+      </div>
+      <p class="hero-meta">634 seguidores · Arte · Frente al Parque Mosquera</p>
+    </div>
+  </section>
+
+  <!-- EXPERIENCIA -->
+  <section id="experiencia" class="section">
+    <div class="section-head">
+      <span class="tag">01 · La experiencia</span>
+      <h2>Cuatro lenguajes, un mismo trazo</h2>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="card-icon">📷</div>
+        <h3>Galería fotográfica</h3>
+        <p>Historias y vivencias de nuestros mayores y territorios, capturadas en imagen.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">🎧</div>
+        <h3>Paisaje sonoro</h3>
+        <p>Memorias grabadas, voces y ambientes que se recorren con audífonos.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">🎭</div>
+        <h3>Cuerpo y escena</h3>
+        <p>Performance e intervención en vivo dentro y fuera de la Casa.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">✏️</div>
+        <h3>Taller abierto</h3>
+        <p>Procesos creativos a la vista: la pizarra siempre está en construcción.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- BITÁCORA / BLOG -->
+  <section id="bitacora" class="section">
+    <div class="section-head">
+      <span class="tag">02 · Bitácora</span>
+      <h2>Notas desde la Casa</h2>
+    </div>
+    <div class="blog">
+      <article class="post">
+        <div class="post-date">02 SEP</div>
+        <h3>Inauguración: todos invitadísimos</h3>
+        <p>Abrimos las puertas de la residencia con una jornada de arte, comunidad y café caliente frente al parque.</p>
+        <a href="#" class="post-link">Seguir leyendo →</a>
+      </article>
+      <article class="post">
+        <div class="post-date">14 AGO</div>
+        <h3>I Galería Fotográfica</h3>
+        <p>Un homenaje a algunos de nuestros mayores: capturando historias y vivencias de los diferentes territorios.</p>
+        <a href="#" class="post-link">Seguir leyendo →</a>
+      </article>
+      <article class="post">
+        <div class="post-date">30 JUL</div>
+        <h3>El sonido del barrio</h3>
+        <p>Cómo construimos un mapa sonoro caminando las calles que rodean la Casa Azul.</p>
+        <a href="#" class="post-link">Seguir leyendo →</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria" class="section">
+    <div class="section-head">
+      <span class="tag">03 · Galería</span>
+      <h2>Trazos de archivo</h2>
+    </div>
+    <div class="gallery">
+      <figure class="frame"><span>Boceto · fachada</span></figure>
+      <figure class="frame"><span>Retrato · mayores</span></figure>
+      <figure class="frame"><span>Escena · taller</span></figure>
+      <figure class="frame"><span>Mapa · sonoro</span></figure>
+      <figure class="frame"><span>Detalle · ventana</span></figure>
+      <figure class="frame"><span>Público · jornada</span></figure>
+    </div>
+    <p class="gallery-note">* Reemplaza estos marcos por tus fotografías reales en <code>/img</code>.</p>
+  </section>
+
+  <!-- AGENDA -->
+  <section id="agenda" class="section">
+    <div class="section-head">
+      <span class="tag">04 · Agenda</span>
+      <h2>Lo que viene</h2>
+    </div>
+    <ul class="agenda-list">
+      <li><span class="agenda-when">Sáb · 7pm</span><span class="agenda-what">Noche de proyección + paisaje sonoro</span></li>
+      <li><span class="agenda-when">Dom · 3pm</span><span class="agenda-what">Taller abierto de retrato a tiza</span></li>
+      <li><span class="agenda-when">Mié · 6pm</span><span class="agenda-what">Conversatorio: memoria del territorio</span></li>
+    </ul>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="section contact">
+    <h2>Ven a dibujar con nosotros</h2>
+    <p>Frente al Parque Mosquera · Cra. 58 #19-47</p>
+    <div class="contact-cta">
+      <a href="https://www.facebook.com/p/Residencia-Artistica-Casa-Azul-100069790014222/" target="_blank" rel="noopener" class="btn-chalk">Síguenos en Facebook</a>
+      <a href="mailto:hola@casaazul.art" class="btn-link">hola@casaazul.art →</a>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>Residencia Artística Casa Azul</span>
+    <span>Hecho a tiza · 2026</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
