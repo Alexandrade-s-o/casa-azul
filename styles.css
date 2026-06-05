@@ -1,6 +1,6 @@
 :root {
-  --paper: #0e3f97;        /* fondo azul tipo afiche */
-  --paper-2: #1850b0;      /* tarjetas: azul un poco más claro */
+  --paper: #0a2f7a;        /* fondo azul oscuro tipo afiche */
+  --paper-2: #133f97;      /* tarjetas: azul un poco más claro */
   --graphite: #eef4ff;     /* "tinta" clara sobre azul */
   --graphite-soft: #b9ccef;
   --blue-deep: #ffffff;    /* trazo del dibujo: blanco como el afiche */
@@ -65,7 +65,7 @@ h1, h2, h3, .brand-mark, .kicker, .tag, .post-date, .agenda-when {
   top: 0;
   z-index: 5;
   backdrop-filter: blur(3px);
-  background: rgba(14, 63, 151, 0.72);
+  background: rgba(10, 47, 122, 0.78);
   border-bottom: 2px solid transparent;
   border-image: repeating-linear-gradient(90deg, var(--graphite) 0 8px, transparent 8px 16px) 2;
 }
