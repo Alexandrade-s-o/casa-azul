@@ -1,13 +1,13 @@
 :root {
-  --paper: #f4efe2;
-  --paper-2: #ece4d2;
-  --graphite: #2c2a26;
-  --graphite-soft: #5b574e;
-  --blue-deep: #14439b;
-  --blue: #1b54c4;
+  --paper: #0e3f97;        /* fondo azul tipo afiche */
+  --paper-2: #1850b0;      /* tarjetas: azul un poco más claro */
+  --graphite: #eef4ff;     /* "tinta" clara sobre azul */
+  --graphite-soft: #b9ccef;
+  --blue-deep: #ffffff;    /* trazo del dibujo: blanco como el afiche */
+  --blue: #ffe27a;
   --yellow: #f2b705;
-  --yellow-deep: #d99e00;
-  --line: rgba(44, 42, 38, 0.18);
+  --yellow-deep: #ffd23f;
+  --line: rgba(238, 244, 255, 0.28);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -37,7 +37,8 @@ body {
     radial-gradient(circle at 30% 85%, rgba(0,0,0,0.06) 0, transparent 26%),
     linear-gradient(120deg, rgba(0,0,0,0.04) 0, transparent 35%),
     linear-gradient(300deg, rgba(0,0,0,0.04) 0, transparent 40%);
-  mix-blend-mode: multiply;
+  mix-blend-mode: overlay;
+  opacity: 0.8;
 }
 
 /* Grano de papel / textura de lápiz */
