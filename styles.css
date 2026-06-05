@@ -139,6 +139,24 @@ h1, h2, h3, .brand-mark, .kicker, .tag, .post-date, .agenda-when {
   opacity: var(--sig, 0);
   transition: opacity 0.5s ease;
 }
+/* Logo Casa Azul */
+.logo { margin-bottom: 1.4rem; }
+.logo-svg {
+  width: clamp(140px, 20vw, 210px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(4px 6px 0 rgba(4, 18, 56, 0.35));
+}
+.logo-house { fill: #13439b; }
+.logo-t {
+  fill: #fff;
+  font-family: "Anton", sans-serif;
+  text-anchor: middle;
+  font-size: 36px;
+  letter-spacing: 3px;
+}
+.logo-t--sm { font-size: 27px; letter-spacing: 1px; }
+
 .kicker { color: var(--yellow-deep); font-size: 1.5rem; transform: rotate(-2deg); display: inline-block; }
 .hero-title { font-size: clamp(3rem, 8vw, 6rem); line-height: 0.95; margin: 0.4rem 0 1rem; font-weight: 700; color: var(--graphite); }
 .hero-title .hl {
