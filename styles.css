@@ -134,11 +134,19 @@ h1, h2, h3, .brand-mark, .kicker, .tag, .post-date, .agenda-when {
 .house-svg { width: 100%; max-width: 560px; display: block; margin: 0 auto; }
 .sketch-stroke {
   fill: none;
-  stroke: var(--graphite);
-  stroke-width: 2.5;
+  stroke: var(--blue-deep);
+  stroke-width: 2.3;
   stroke-linecap: round;
   stroke-linejoin: round;
   filter: url(#pencil);
+}
+.sketch-stroke .windows { stroke-width: 1.6; }
+.signature {
+  fill: var(--blue-deep);
+  stroke: none;
+  font-family: "Caveat", cursive;
+  font-size: 26px;
+  font-weight: 700;
 }
 .sketch-stroke path,
 .sketch-stroke rect,

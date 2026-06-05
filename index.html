@@ -40,21 +40,67 @@
   <!-- HERO -->
   <section id="inicio" class="hero">
     <div class="hero-sketch" aria-hidden="true">
-      <!-- Casa dibujada a mano, estilo trazo de tiza -->
-      <svg viewBox="0 0 600 360" class="house-svg">
+      <!-- Casa Azul: edificio de 3 pisos a lápiz, inspirado en el afiche -->
+      <svg viewBox="0 0 480 560" class="house-svg">
         <g class="sketch-stroke">
-          <path d="M70 300 L70 170 L300 60 L530 170 L530 300 Z" />
-          <path d="M70 170 L300 60 L530 170" />
-          <rect x="130" y="210" width="70" height="80" />
-          <rect x="265" y="210" width="70" height="80" />
-          <rect x="400" y="210" width="70" height="80" />
-          <line x1="165" y1="210" x2="165" y2="290" />
-          <line x1="130" y1="250" x2="200" y2="250" />
-          <line x1="300" y1="210" x2="300" y2="290" />
-          <line x1="265" y1="250" x2="335" y2="250" />
-          <line x1="435" y1="210" x2="435" y2="290" />
-          <line x1="400" y1="250" x2="470" y2="250" />
-          <path d="M50 300 L560 300" />
+          <!-- Tejado principal inclinado -->
+          <path d="M70 175 L250 95 L430 175" />
+          <path d="M70 175 L430 175" />
+          <!-- Tejas (líneas diagonales) -->
+          <line x1="110" y1="158" x2="95" y2="175" />
+          <line x1="150" y1="140" x2="135" y2="175" />
+          <line x1="190" y1="122" x2="175" y2="175" />
+          <line x1="250" y1="95" x2="250" y2="175" />
+          <line x1="310" y1="122" x2="325" y2="175" />
+          <line x1="350" y1="140" x2="365" y2="175" />
+          <line x1="390" y1="158" x2="405" y2="175" />
+          <!-- Buhardilla / torreta superior -->
+          <path d="M225 95 L225 60 L250 45 L275 60 L275 100" />
+          <line x1="225" y1="60" x2="275" y2="60" />
+          <rect x="240" y="68" width="20" height="24" rx="9" />
+
+          <!-- Cuerpo del edificio (3 pisos) -->
+          <path d="M95 175 L95 470 L385 470 L385 175" />
+
+          <!-- Piso 3 -->
+          <rect x="125" y="195" width="42" height="52" />
+          <rect x="220" y="195" width="42" height="52" />
+          <rect x="315" y="195" width="42" height="52" />
+          <!-- Piso 2 -->
+          <rect x="125" y="285" width="42" height="52" />
+          <rect x="220" y="285" width="42" height="52" />
+          <rect x="315" y="285" width="42" height="52" />
+          <!-- Cruces de ventanas (todas) -->
+          <g class="windows">
+            <line x1="146" y1="195" x2="146" y2="247" /><line x1="125" y1="221" x2="167" y2="221" />
+            <line x1="241" y1="195" x2="241" y2="247" /><line x1="220" y1="221" x2="262" y2="221" />
+            <line x1="336" y1="195" x2="336" y2="247" /><line x1="315" y1="221" x2="357" y2="221" />
+            <line x1="146" y1="285" x2="146" y2="337" /><line x1="125" y1="311" x2="167" y2="311" />
+            <line x1="241" y1="285" x2="241" y2="337" /><line x1="220" y1="311" x2="262" y2="311" />
+            <line x1="336" y1="285" x2="336" y2="337" /><line x1="315" y1="311" x2="357" y2="311" />
+          </g>
+
+          <!-- Línea divisoria de pisos -->
+          <line x1="95" y1="372" x2="385" y2="372" />
+
+          <!-- Planta baja: arco de entrada -->
+          <path d="M205 470 L205 415 Q240 388 275 415 L275 470" />
+          <line x1="240" y1="402" x2="240" y2="470" />
+          <!-- Ventana baja izquierda -->
+          <rect x="125" y="400" width="42" height="52" />
+          <line x1="146" y1="400" x2="146" y2="452" /><line x1="125" y1="426" x2="167" y2="426" />
+
+          <!-- Escalera exterior derecha -->
+          <path d="M315 470 L315 452 L330 452 L330 440 L345 440 L345 428 L360 428 L360 416" />
+
+          <!-- Pequeño árbol a la derecha -->
+          <path d="M415 470 L415 430" />
+          <path d="M415 430 q-22 -4 -26 -26 q24 6 26 26 q4 -22 26 -26 q-2 22 -26 26" />
+
+          <!-- Suelo -->
+          <path d="M55 470 L440 470" />
+          <!-- Firma "Casa Azul" -->
+          <text x="300" y="350" class="signature">Casa Azul</text>
         </g>
       </svg>
     </div>
