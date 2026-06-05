@@ -100,14 +100,50 @@ h1, h2, h3, .brand-mark, .kicker, .tag, .post-date, .agenda-when {
 /* HERO */
 .hero {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr;
   align-items: center;
-  gap: 2rem;
   padding: clamp(2rem, 6vw, 5rem) clamp(1.2rem, 5vw, 4rem);
-  min-height: 80vh;
+  min-height: 86vh;
 }
-.hero-content { order: 1; }
-.hero-sketch { order: 2; }
+.hero-content { order: 1; max-width: 620px; position: relative; z-index: 2; }
+
+/* Edificio de fondo fijo, se dibuja con el scroll */
+.bg-house {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(60vw, 760px);
+  z-index: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.55;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 22%);
+  mask-image: linear-gradient(to right, transparent 0, #000 22%);
+}
+.bg-house .house-svg { width: 100%; height: 88%; max-width: none; }
+.draw-stroke {
+  fill: none;
+  stroke: var(--blue-deep);
+  stroke-width: 2.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: url(#pencil);
+}
+.draw-stroke .windows { stroke-width: 1.6; }
+.draw-stroke path,
+.draw-stroke rect,
+.draw-stroke line,
+.draw-stroke circle {
+  /* el JS controla el dibujo; offset inicial = oculto */
+  stroke-dashoffset: var(--dash, 0);
+}
+.draw-stroke .signature {
+  opacity: var(--sig, 0);
+  transition: opacity 0.5s ease;
+}
 .kicker { color: var(--yellow-deep); font-size: 1.5rem; transform: rotate(-2deg); display: inline-block; }
 .hero-title { font-size: clamp(3rem, 8vw, 6rem); line-height: 0.95; margin: 0.4rem 0 1rem; font-weight: 700; color: var(--graphite); }
 .hero-title .hl {
@@ -305,8 +341,6 @@ h1, h2, h3, .brand-mark, .kicker, .tag, .post-date, .agenda-when {
 
 /* RESPONSIVE */
 @media (max-width: 820px) {
-  .hero { grid-template-columns: 1fr; }
-  .hero-sketch { order: 1; }
-  .hero-content { order: 2; }
+  .bg-house { width: 100vw; opacity: 0.18; mask-image: none; -webkit-mask-image: none; }
   .nav-links a:not(.btn-chalk) { display: none; }
 }
